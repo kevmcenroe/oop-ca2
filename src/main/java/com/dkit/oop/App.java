@@ -31,6 +31,12 @@ public class App
         System.out.println("Property p1 details:");
         System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea());
 
+        System.out.println("Tax for p1 = " + p1.calculateTax());
+        System.out.println("p1 facilities = " + p1.getFacilities().toString());
+        p1.addFacility("electricity");
+        System.out.println("p1 facilities with electricity added = " + p1.getFacilities().toString());
+        p1.removeFacility("electricity");
+        System.out.println("p1 facilities with electricity removed = " + p1.getFacilities().toString());
 
         System.out.println("Q2 - tests");
 

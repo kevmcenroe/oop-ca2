@@ -11,7 +11,9 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
-    //private String[] facilities;
+
+
+
     private ArrayList<String> facilities = new ArrayList<String>();
 
     public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
@@ -30,7 +32,36 @@ public class Property
         this.postcode = postcode;
         this.sellingPrice = 0;
         this.area = area;
-        this.facilities = facilities;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        Property compareProperty = (Property)obj;
+        if(this.propertyID == compareProperty.propertyID && this.owner == compareProperty.owner)
+            return true;
+        else
+            return false;
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString();
+    }
+
+    /*6.	Add a method calculateTax() to calculate and return the yearly property tax for a property. This is calculated as the area in square metres multiplied by 2.2 and added to a fixed basic property charge of €15.
+*/
+    public double calculateTax()
+    {
+        double tax = (this.area * 2.2) + 15;
+        return tax;
     }
 
     public void addFacility(String facility)
@@ -41,6 +72,10 @@ public class Property
     public void removeFacility(String facility)
     {
         this.facilities.remove(facility);
+    }
+
+    public ArrayList<String> getFacilities() {
+        return facilities;
     }
 
     public int getPropertyID()
