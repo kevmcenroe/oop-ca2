@@ -12,8 +12,6 @@ public class Property
     private double sellingPrice;
     private double area;
 
-
-
     private ArrayList<String> facilities = new ArrayList<String>();
 
     public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
