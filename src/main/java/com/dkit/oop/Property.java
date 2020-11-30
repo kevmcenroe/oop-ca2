@@ -11,6 +11,8 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
+    //private String[] facilities;
+    private ArrayList<String> facilities = new ArrayList<String>();
 
     public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
     {
@@ -19,6 +21,26 @@ public class Property
         this.postcode = postcode;
         this.sellingPrice = sellingPrice;
         this.area = area;
+    }
+
+    public Property(int propertyID, String owner, String postcode, double area)
+    {
+        this.propertyID = propertyID;
+        this.owner = owner;
+        this.postcode = postcode;
+        this.sellingPrice = 0;
+        this.area = area;
+        this.facilities = facilities;
+    }
+
+    public void addFacility(String facility)
+    {
+        this.facilities.add(facility);
+    }
+
+    public void removeFacility(String facility)
+    {
+        this.facilities.remove(facility);
     }
 
     public int getPropertyID()

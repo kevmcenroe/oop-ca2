@@ -20,6 +20,13 @@ public class App
     {
         System.out.println("Q1 - some simple tests");
 
+        String[] facilities = {
+                "mains water",
+                "electricity",
+                "freehold",
+                "private access"
+        };
+
         Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, 130);
         System.out.println("Property p1 details:");
         System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea());
