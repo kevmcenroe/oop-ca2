@@ -20,33 +20,8 @@ public class App
 
     public void start()
     {
-        System.out.println("Q1 - some simple tests");
-
-        String[] facilities = {
-                "mains water",
-                "electricity",
-                "freehold",
-                "private access"
-        };
-
-        Property propertyA = new Property(2, "Bob Smith", "A99B100", 200000, 110);
-        Property propertyB = new Property(3, "John McEvoy", "A77B300", 100000, 80);
-        Property propertyC = new Property(4, "Andrew Baker", "A88B200", 250000, 150);
-
-        ArrayList<Property> properties = new ArrayList<Property>();
-        properties.add(propertyA);
-        properties.add(propertyB);
-        properties.add(propertyC);
-
-        //Property[] inputProperties = properties.toArray(n -> new Property[n]);
-        displayAllProperties(properties);
-
-        ArrayList<Property> propertiesAboveMinSellingPrice = getPropertiesPriceAbove(properties, 150000);
-        System.out.println("Properties above 150000 : " + propertiesAboveMinSellingPrice.toString());
-
-
-
-
+        // QUESTION 1
+        System.out.println("\n Question 1 - Tests \n");
 
         Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, 130);
         System.out.println("Property p1 details:");
@@ -59,14 +34,39 @@ public class App
         p1.removeFacility("electricity");
         System.out.println("p1 facilities with electricity removed = " + p1.getFacilities().toString());
 
-        System.out.println("Q2 - tests");
+
+
+        // QUESTION 2
+        System.out.println("\n Question 2 - Tests \n");
+
+        Property propertyA = new Property(2, "Bob Smith", "A99B100", 200000, 110);
+        Property propertyB = new Property(3, "John McEvoy", "A77B300", 100000, 80);
+        Property propertyC = new Property(4, "Andrew Baker", "A88B200", 250000, 150);
+
+        ArrayList<Property> properties = new ArrayList<Property>();
+        properties.add(propertyA);
+        properties.add(propertyB);
+        properties.add(propertyC);
+
+        displayAllProperties(properties);
+
+        ArrayList<Property> propertiesAboveMinSellingPrice = getPropertiesPriceAbove(properties, 150000);
+        System.out.println("Properties above 150000 : ");
+        for(Property applicableProperty : propertiesAboveMinSellingPrice)
+        {
+            System.out.println(applicableProperty.toString());
+        }
 
 
 
-        System.out.println("Q3 - tests");
+        System.out.println("\n Question 3 - Tests \n");
 
 
-        System.out.println("Q4 - tests");
+        PrivateProperty privateProperty = new PrivateProperty(2, "Bob Smith", "A99B100", 200000, 110);
+        System.out.println("Tax due for private property : " + "\nPropertyID = " + privateProperty.getPropertyID() +
+                "\nPrivate property tax = " + privateProperty.calculateTax());
+
+        System.out.println("\n Question 4 - Tests \n");
 
 
     }

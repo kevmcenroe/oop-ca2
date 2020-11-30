@@ -34,7 +34,6 @@ public class Property
 
     @Override
     public int hashCode() {
-
         return super.hashCode();
     }
 
@@ -49,16 +48,24 @@ public class Property
     }
 
     @Override
-    public String toString()
-    {
-        return super.toString();
+    public String toString() {
+        return "Property{" +
+                "propertyID=" + propertyID +
+                ", owner='" + owner + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", sellingPrice=" + sellingPrice +
+                ", area=" + area +
+                ", facilities=" + facilities +
+                '}';
     }
 
     /*6.	Add a method calculateTax() to calculate and return the yearly property tax for a property. This is calculated as the area in square metres multiplied by 2.2 and added to a fixed basic property charge of €15.
 */
     public double calculateTax()
     {
-        double tax = (this.area * 2.2) + 15;
+        int propertyCharge = 15;
+        double areaMultiplier = 2.2;
+        double tax = (this.area * areaMultiplier) + propertyCharge;
         return tax;
     }
 
