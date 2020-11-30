@@ -47,7 +47,6 @@ public class App
         properties.add(propertyA);
         properties.add(propertyB);
         properties.add(propertyC);
-
         displayAllProperties(properties);
 
         ArrayList<Property> propertiesAboveMinSellingPrice = getPropertiesPriceAbove(properties, 150000);
@@ -58,22 +57,41 @@ public class App
         }
 
 
-
+        // QUESTION 3
         System.out.println("\n Question 3 - Tests \n");
 
-
-        PrivateProperty privateProperty = new PrivateProperty(2, "Bob Smith", "A99B100", 200000, 110);
+        PrivateProperty privateProperty = new PrivateProperty(2, "Bob Smith", "A99B100", 200000, 110, 2, "Detached");
         System.out.println("Tax due for private property : " + "\nPropertyID = " + privateProperty.getPropertyID() +
                 "\nPrivate property tax = " + privateProperty.calculateTax());
 
+
+        // QUESTION 4
         System.out.println("\n Question 4 - Tests \n");
 
+        Property privatePropertyA = new PrivateProperty(2, "Bob Smith", "A99B100", 200000, 110, "Detached");
+        Property privatePropertyB = new PrivateProperty(3, "John McEvoy", "A77B300", 100000, 80, 110, "Detached");
+        Property privatePropertyC = new PrivateProperty(4, "Andrew Baker", "A88B200", 250000, 150, 110,"Detached");
 
+        properties.add(privatePropertyA);
+        properties.add(privatePropertyB);
+        properties.add(privatePropertyC);
+
+        displayAllProperties(properties);
+        displaySelectDetachedProperties(properties);
     }
 
     private void displayAllProperties(ArrayList<Property> properties) {
+        System.out.println("\n Displayed Properties");
         for(Property property : properties){
             System.out.println(property.getPropertyID() + " : " + property.getOwner() + " : " + property.getPostcode() + " : " + property.getSellingPrice() + " : " + property.getArea() + " : " + property.getFacilities().toString());
+            System.out.println("Tax = " + property.calculateTax());
+        }
+    }
+
+    private void displaySelectDetachedProperties(ArrayList<Property> properties) {
+        System.out.println("\n Displayed Detached Properties");
+        for(Property property : properties){
+            System.out.println(property.getPropertyID() + " : " + property.getSellingPrice());
         }
     }
 

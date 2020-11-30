@@ -5,11 +5,12 @@ import java.util.Objects;
 
 public class PrivateProperty extends Property
 {
-    int numBeds;
-    String propertyType;
+    private int numBeds;
+    private String propertyType;
 
 
-    public PrivateProperty(int propertyID, String owner, String postcode, double sellingPrice, double area) {
+    public PrivateProperty(int propertyID, String owner, String postcode, double sellingPrice, double area,
+                           int numBeds, String propertyType) {
         super(propertyID, owner, postcode, sellingPrice, area);
         this.numBeds = numBeds;
         this.propertyType = propertyType;
